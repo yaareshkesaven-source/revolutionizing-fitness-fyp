@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else "Revolutionizing Fitness" }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav .logo-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        nav h1 {
+            font-size: 28px;
+            color: #00cec9;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            font-size: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            color: #dfe6e9;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <h1>Revolutionizing Fitness</h1>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        © 2025 Revolutionizing Fitness. All rights reserved.
+    </footer>
+</body>
+</html>
